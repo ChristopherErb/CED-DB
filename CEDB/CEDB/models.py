@@ -13,9 +13,6 @@ class Employee(models.Model):
         return self.employee_name
 
 
-
-
-
 class Customer(models.Model):
     business_name  = models.CharField(max_length=100)
     manager = models.CharField(max_length=100)
@@ -24,7 +21,7 @@ class Customer(models.Model):
     description = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.customer_id
+        return self.business_name
     
 
 class Project(models.Model):
@@ -36,11 +33,11 @@ class Project(models.Model):
     invoice  = models.CharField(max_length=100)
     total_cost = models.CharField(max_length=100)
     type_of_job = models.CharField(max_length=100)
-    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='projects')
+    customer_id  = models.ForeignKey(Customer, db_column='customer_id', on_delete=models.CASCADE, related_name='projects')
     material_cost = models.CharField(max_length=100)
     labor_cost = models.CharField(max_length=100)
-    employee_id = models.ManyToManyField(Employee, related_name='projects')
+    employee_id = models.ManyToManyField(Employee, db_column='employee_id', related_name='projects')
 
     def __str__(self):
-        return self.project_id
+        return self.description
 
