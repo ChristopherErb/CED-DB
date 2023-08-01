@@ -6,7 +6,7 @@ from .models import Employee, Customer, Project
 
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     projects = serializers.HyperlinkedRelatedField(
-        view_name='project-deatil',
+        view_name='project-detail',
         many=True,
         read_only=True
     )
@@ -39,14 +39,14 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
-    customers = serializers.HyperlinkedRelatedField(
-        view_name = 'employee_detail',
-        many=True,
-        read_only=True
-    )
+    # customers = serializers.HyperlinkedRelatedField(
+    #     view_name = 'customer-detail',
+    #     many=True,
+    #     read_only=True
+    # )
 
     class Meta:
         model = Customer
-        fields ='__all__'
+        fields = ('id', 'url','business_name','manager','address','price_sqft','description')
 
 
