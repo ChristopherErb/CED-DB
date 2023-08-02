@@ -57,6 +57,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://example.com",
     "https://sub.example.com",
     "http://localhost:5173",
+    "http://127.0.0.1:5555",
     "http://127.0.0.1:5432",
 ]
 
@@ -100,11 +101,12 @@ WSGI_APPLICATION = 'CEDB_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cedb',
-        'USER': 'cedbuser',
-        'PASSWORD': 'cedb',
-        'HOST': 'localhost',
-        'PORT' : '5432'
+        'URL' : 'postgresql://postgres:QmxPXrRD0fxybSkpkHqM@containers-us-west-114.railway.app:6674/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'QmxPXrRD0fxybSkpkHqM',
+        'HOST': 'containers-us-west-114.railway.app',
+        'PORT' : '6674'
     }
 }
 
