@@ -103,7 +103,8 @@ DATABASES = {
         'NAME': 'cedb',
         'USER': 'cedbuser',
         'PASSWORD': 'cedb',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'PORT' : '5432'
     }
 }
 
