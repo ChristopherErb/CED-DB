@@ -61,7 +61,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5432",
     "https://ced-db-production.up.railway.app",
     "https://famous-maamoul-915df2.netlify.app",
-    "https://drywall.chriserb.dev/"
+    "https://drywall.chriserb.dev"
     
 ]
 
